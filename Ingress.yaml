@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: argocd-ingress
+  namespace: todo-argocd
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: dev-argo-cd.kulphi.shop
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: argocd-server #(agar argocd par chalana hei to argocd ka server dena hoga esko kubectl get svc -n todo-argocd(namespace) 
+            port: 
+              number: 80 #service ka portnumber

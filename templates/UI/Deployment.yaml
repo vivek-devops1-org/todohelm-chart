@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-ui-deployment
+spec:
+  replicas: {{ .Values.UI.replicaCount }}
+  selector:
+    matchLabels:
+      app-name: {{ .Release.Name }}-ui
+  template:
+    metadata:
+      name: {{ .Release.Name }}-ui
+      labels:
+        app-name: {{ .Release.Name }}-ui
+    spec:
+      containers:
+      - name: {{ .Release.Name }}-ui
+        image: {{ .Values.common.acrRegistoryURL }}/{{ .Values.UI.image.name }}:{{ .Values.UI.image.tag }}
+        ports:
+        - containerPort: {{ .Values.UI.containerPort }}

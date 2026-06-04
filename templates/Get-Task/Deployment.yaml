@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-gettask-deployment
+spec:
+  replicas: {{ .Values.getTask.replicaCount }}
+  selector:
+    matchLabels:
+      app-name: {{ .Release.Name }}-gettask
+  template:
+    metadata:
+      name: {{ .Release.Name }}-gettask
+      labels:
+        app-name: {{ .Release.Name }}-gettask
+    spec:
+      containers:
+      - name: {{ .Release.Name }}-gettask
+        image: {{ .Values.common.acrRegistoryURL }}/{{ .Values.getTask.image.name }}:{{ .Values.getTask.image.tag }}
+        ports:
+        - containerPort: {{ .Values.getTask.containerPort }}
