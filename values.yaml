@@ -1,5 +1,5 @@
 common:
-  acrRegistoryURL: practice30.azurecr.io
+  acrRegistoryURL: todocr001.azurecr.io
   ingressClass: nginx
 UI:
   replicaCount: 2
@@ -11,16 +11,15 @@ UI:
   host: kulphi.shop
 
 getTask:
-  replicaCount: 2
-  image:
+ replicaCount: 2
+ image:
    name: gettask
    tag: v7
-  host: get-task.kulphi.shop
-  servicePort: 80
-  containerPort: 8000
-
+ host: get-task.kulphi.shop
+ servicePort: 80
+ containerPort: 8000
+ 
 add-task:
-  replicaCount: 2
+
 
 delete-task:
-  replicaCount: 2
