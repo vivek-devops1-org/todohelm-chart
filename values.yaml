@@ -1,6 +1,7 @@
 common:
   acrRegistoryURL: todoacr001.azurecr.io
-  ingressClass: nginx
+  # ingressClass: nginx
+  ingressClass: azure-application-gateway
 UI:
   replicaCount: 2
   image:
