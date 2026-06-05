@@ -6,15 +6,15 @@ spec:
   replicas: {{ .Values.addTask.replicaCount }}
   selector:
     matchLabels:
-      app-name: {{ .Release.Name }}-addtask
+      app-name: {{ .Release.Name }}-addTask
   template:
     metadata:
-      name: {{ .Release.Name }}-addtask
+      name: {{ .Release.Name }}-addTask
       labels:
-        app-name: {{ .Release.Name }}-addtask
+        app-name: {{ .Release.Name }}-addTask
     spec:
       containers:
-      - name: {{ .Release.Name }}-addtask
-        image: {{ .Values.common.acrRegistoryURL }}/{{ .Values.addtask.image.name }}:{{ .Values.addtask.image.tag }}
+      - name: {{ .Release.Name }}-addTask
+        image: {{ .Values.common.acrRegistoryURL }}/{{ .Values.addTask.image.name }}:{{ .Values.addTask.image.tag }}
         ports:
-        - containerPort: {{ .Values.addtask.containerPort }}
+        - containerPort: {{ .Values.addTask.containerPort }}
