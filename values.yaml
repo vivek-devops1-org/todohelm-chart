@@ -1,5 +1,5 @@
 common:
-  acrRegistoryURL: todocr001.azurecr.io
+  acrRegistoryURL: todoacr001.azurecr.io
   ingressClass: nginx
 UI:
   replicaCount: 2
