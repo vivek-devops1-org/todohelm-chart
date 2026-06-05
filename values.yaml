@@ -5,7 +5,7 @@ UI:
   replicaCount: 2
   image:
     name: todoui
-    tag: v24
+    tag: v28
   servicePort: 80
   containerPort: 80
   host: kulphi.shop
@@ -14,12 +14,26 @@ getTask:
  replicaCount: 2
  image:
    name: gettask
-   tag: v7
+   tag: v8
  host: get-task.kulphi.shop
  servicePort: 80
  containerPort: 8000
  
-add-task:
+deleteTask:
+ replicaCount: 2
+ image:
+   name: deletetask
+   tag: v6
+ host: delete-task.kulphi.shop
+ servicePort: 80
+ containerPort: 8000
 
+addTask:
+ replicaCount: 2
+ image:
+   name: addtask
+   tag: v11
+ host: add-task.kulphi.shop
+ servicePort: 80
+ containerPort: 8000
 
-delete-task:

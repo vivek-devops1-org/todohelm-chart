@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: {{ .Release.Name }}-gettask-ingress
+  name: {{ .Release.Name }}-get-task-ingress
   labels:
     app.kubernetes.io/name: myingress
 spec:
@@ -14,6 +14,6 @@ spec:
         path: "/"
         backend:
           service:
-            name: {{ .Release.Name }}-gettask-service #service name mean Loadbalancer service ka naam, yha cluster ip type LB ko add kar rahe
+            name: {{ .Release.Name }}-get-task-service #(agar argocd par chalana hei to argocd ka server dena hoga esko kubectl get svc -n todo-argocd(namespace) se check kar sakte ho)service name mean Loadbalancer service ka naam, yha cluster ip type LB ko add kar rahe
             port: 
               number: {{ .Values.getTask.servicePort }} #service ka portnumber

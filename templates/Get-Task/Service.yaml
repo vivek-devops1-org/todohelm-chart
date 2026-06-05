@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Release.Name }}-gettask-service
+  name: {{ .Release.Name }}-get-task-service
 spec:
   type: ClusterIP
   selector:

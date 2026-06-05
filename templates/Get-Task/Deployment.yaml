@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}-gettask-deployment
+  name: {{ .Release.Name }}-get-deployment
 spec:
   replicas: {{ .Values.getTask.replicaCount }}
   selector:
