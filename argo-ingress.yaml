@@ -3,16 +3,18 @@ kind: Ingress
 metadata:
   name: argo-ingress
   namespace: todo-argocd
+  labels:
+    app.kubernetes.io/name: myingress
 spec:
   ingressClassName: azure-application-gateway
   rules:
-    - host: argo-cd.kulphi.shop
-      http:
-        paths:
-          - path: "/"
-            pathType: Prefix
-            backend:
-              service:
-                name: argocd-server
-                port:
-                  number: 80
+  - host: argo-cd.kulphi.shop
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: argocd-server #(agar argocd par chalana hei to argocd ka server dena hoga esko kubectl get svc -n todo-argocd(namespace) se check kar sakte ho)service name mean Loadbalancer service ka naam, yha cluster ip type LB ko add kar rahe
+            port: 
+              number: 80 #service ka portnumber
