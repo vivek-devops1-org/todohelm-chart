@@ -3,8 +3,6 @@ kind: Ingress
 metadata:
   name: argo-ingress
   namespace: argocd
-  labels:
-    app.kubernetes.io/name: myingress
 spec:
   ingressClassName: azure-application-gateway
   rules:
