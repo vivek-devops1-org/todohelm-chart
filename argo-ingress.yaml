@@ -4,7 +4,8 @@ metadata:
   name: argo-ingress
   namespace: argocd
 spec:
-  ingressClassName: azure-application-gateway
+  # ingressClassName: azure-application-gateway
+  ingressClassName: nginx
   rules:
   - host: argo-example.kulphi.shop
     http:
